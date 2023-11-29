@@ -1,0 +1,17 @@
+import gmpy2
+import libnum
+from crypto.Util.number import *
+
+flag=b'ISCTF{*************}'
+m=bytes_to_long(flag)
+
+p=libnum.generate_prime(1024)
+e=libnum.generate_prime(512)
+
+c=pow(m,e,n)
+output = open('output1.txt', 'w')
+output.write('e=' + str(e) + '\n')
+output.write('n=' + str(n) + '\n')
+output.write('c=' + str(c) + '\n')
+output.close()
+
